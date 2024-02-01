@@ -45,7 +45,7 @@
     </header>
     <main>
         <div class="container1">
-            <section>
+            <section class="hidden">
                 <img src="https://assets-global.website-files.com/6257adef93867e50d84d30e2/6582c18a9cff186bd3731704_Create%20an%20invite-only%20place%20where%20you%20belong.svg" alt="">
                 <div>
                     <h2>Crie um espaço controlado por convite onde você se sinta em casa</h2>
@@ -57,7 +57,7 @@
         </div>
 
         <div class="container2">
-            <section>
+            <section class="hidden">
             
                 <div>
                     <h2>Aqui é fácil se encontrar</h2>
@@ -70,7 +70,7 @@
         </div>
 
         <div class="container3">
-            <section>
+            <section class="hidden">
                 <img src="https://assets-global.website-files.com/6257adef93867e50d84d30e2/6582c1d8348e5c81ca608138_From%20few%20to%20a%20fandom.svg" alt="">
                 <div>
                     <h2>Para poucos e para muitos</h2>
@@ -85,6 +85,21 @@
     <footer>
         <img src="https://assets-global.website-files.com/6257adef93867e50d84d30e2/6257d23c5fb25be7e0b6e220_Open%20Source%20Projects%20_%20Discord-7.svg" alt="" width="200vw">
     </footer>
+
+    <script>
+        const myObserver = new IntersectionObserver( (entries) => {
+            entries.forEach( (entry) => {
+                if(entry.isIntersecting) {
+                    entry.target.classList.add('show')
+                }
+            })
+        })
+
+        const elements = document.querySelectorAll('.hidden')
+
+        elements.forEach( (element) => myObserver.observe(element))
+        
+    </script>
 
 </body>
 </html>

@@ -149,6 +149,20 @@ footer {
     justify-content: center;
 }
 
+.hidden {
+    opacity: 0;
+    filter: blur(15px);
+    transition: all 1s;
+    transform: translateX(-100%);
+}
+
+.show {
+    opacity: 1;
+    transition: all 1s;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
 /*media queries*/
 
 @media screen and (max-width: 1200px) {
